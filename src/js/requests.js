@@ -22,4 +22,16 @@ export class Requests {
       .catch((err) => console.log(err));
     return loginUser;
   }
+
+  static async register(body) {
+    const registerUser = fetch(`${baseUrl}//users/register`, {
+      method: "POST",
+      headers: this.headers,
+      body: JSON.stringify(body),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+    return registerUser;
+  }
 }
