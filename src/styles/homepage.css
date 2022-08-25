@@ -1,0 +1,53 @@
+header{
+    background-color: var(--blue);
+}
+
+.header__container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__container__user{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+}
+
+.header__container__user p{
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    text-shadow: 2px 2px black;
+}
+
+.header__container__logoutBtn{
+    color: var(--white);
+    border-radius: 1.25rem;
+    width: 9.5rem;
+    height: 2rem;
+    background-color: var(--darkBlue2);
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.25rem;
+
+}
+
+.header__container__user  div{
+    display: flex;
+}
+
+.header__container__user  div img{
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+
