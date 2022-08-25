@@ -12,11 +12,11 @@ export class Requests {
       headers: this.headers,
       body: JSON.stringify(body),
     })
-      .then((res) => res.json)
+      .then((res) => res.json())
       .then((res) => {
         localStorage.setItem("@KenzieBlog:token", res.token);
         localStorage.setItem("@KenzieBlog:user_id", res.userId);
-        window.location.assign("src/pages/homepage.html");
+        // window.location.assign("src/pages/homepage.html");
         return res;
       })
       .catch((err) => console.log(err));
