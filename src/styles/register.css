@@ -10,7 +10,7 @@
 .main_form {
   background-color: var(--blue);
   width: 90%;
-  height: 50%;
+  height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,23 +51,35 @@
   background-color: var(--white);
   color: var(--darkBlue);
 }
+.main_form > p {
+  color: var(--white);
+  font-weight: 300;
+  font-size: 1rem;
+}
+.main_form > p > span {
+  color: var(--white);
+  font-weight: 300;
+  font-size: 1rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 @media (min-width: 850px) {
   .main_form {
     width: 80%;
-    height: 60%;
+    height: 75%;
   }
 }
 
 @media (min-width: 1200px) {
   .main_form {
-    height: 70%;
+    height: 80%;
   }
 }
 
 @media (min-width: 1500px) {
   .main_form {
-    height: 80%;
+    height: 90%;
     width: 50%;
   }
 }
