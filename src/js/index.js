@@ -2,7 +2,7 @@ import { Requests } from "./requests.js";
 
 class Login {
   static renderLogin() {
-    const token = localStorage.getItem("@KenzieBlog:token");
+    const token = localStorage.getItem("@KenzieBlog:token") || "";
     console.log(token);
 
     if (token) {
