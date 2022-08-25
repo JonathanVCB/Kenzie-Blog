@@ -1,0 +1,85 @@
+.main_container {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--darkBlue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main_form {
+  background-color: var(--blue);
+  width: 90%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  border-radius: 10px;
+}
+
+.main_form > h1 {
+  font-weight: 700;
+  font-size: 2.188rem;
+  text-shadow: 1px 1px var(--black);
+  color: var(--white);
+  width: 100%;
+  text-align: center;
+}
+.main_form > input {
+  width: 80%;
+  height: 9%;
+  border-radius: 10px;
+  border: 1px solid var(--darkBlue);
+  font-weight: 400;
+  font-size: 0.938rem;
+  padding-left: 1rem;
+}
+.main_form > button {
+  background-color: var(--darkBlue2);
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--white);
+  width: 50%;
+  height: 9%;
+  cursor: pointer;
+  transition: 0.7s;
+}
+.main_form > button:hover {
+  background-color: var(--white);
+  color: var(--darkBlue);
+}
+.main_form > p {
+  color: var(--white);
+  font-weight: 300;
+  font-size: 1rem;
+}
+.main_form > p > span {
+  color: var(--white);
+  font-weight: 300;
+  font-size: 1rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (min-width: 850px) {
+  .main_form {
+    width: 80%;
+    height: 60%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main_form {
+    height: 70%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .main_form {
+    height: 80%;
+    width: 50%;
+  }
+}
