@@ -1,35 +1,36 @@
+import { PosterEdit } from "./editPoster.js";
 import { Requests } from "./requests.js";
 
-let userId = localStorage.getItem("@KenzieBlog:user_id")
+let userId = localStorage.getItem("@KenzieBlog:user_id");
 
 let arrayPosts = await Requests.getPosts();
 
 let userData = await Requests.getUserData(userId);
 
 class Posts {
-  static listPosts(posts) {
+  static async listPosts(posts) {
     const ul = document.querySelector(".posts__list");
-    posts.forEach((post) => {
-      const cardPost = Render.renderPost(post);
+    await posts.forEach(async (post) => {
+      const cardPost = await Render.renderPost(post);
 
       ul.appendChild(cardPost);
     });
   }
 
-  static logout(){
-    const btnLogout = document.getElementById("logoutBtn")
+  static logout() {
+    const btnLogout = document.getElementById("logoutBtn");
 
-    btnLogout.addEventListener("click", (event)=>{
-        localStorage.removeItem("@KenzieBlog:user_id")
-        localStorage.removeItem("@KenzieBlog:token")
+    btnLogout.addEventListener("click", (event) => {
+      localStorage.removeItem("@KenzieBlog:user_id");
+      localStorage.removeItem("@KenzieBlog:token");
 
-        window.location.assign("../../index.html")
-    })
+      window.location.assign("../../index.html");
+    });
   }
 }
 
 class Render {
-  static renderPost(post) {
+  static async renderPost(post) {
     const userIdLocalStorage = localStorage.getItem("@KenzieBlog:user_id");
     const liPostsList = document.createElement("li");
     const divPostImages = document.createElement("div");
@@ -85,6 +86,15 @@ class Render {
     liPostsList.id = post.id;
     liPostsList.value = post.user.id;
 
+    editDesktopBtn.addEventListener("click", () => {
+      const idUser = liPostsList.id;
+      PosterEdit.openModalEdit(idUser);
+    });
+
+    editMobileBtn.addEventListener("click", () => {
+      PosterEdit.openModalEdit();
+    });
+
     editMobileBtn.append(imgEditBtn);
 
     deleteMobileBtn.append(imgDeleteBtn);
@@ -120,24 +130,24 @@ class Render {
     return liPostsList;
   }
 
-  static renderHeader(user){
-    const userContainer = document.querySelector(".header__container__user")
-    const divImg = document.createElement("div")
-    const userImg = document.createElement("img")
-    const username = document.createElement("p")
+  static renderHeader(user) {
+    const userContainer = document.querySelector(".header__container__user");
+    const divImg = document.createElement("div");
+    const userImg = document.createElement("img");
+    const username = document.createElement("p");
 
-    userImg.src = user.avatarUrl
+    userImg.src = user.avatarUrl;
 
-    username.innerText = user.username
+    username.innerText = user.username;
 
-    divImg.append(userImg)
+    divImg.append(userImg);
 
-    userContainer.append(divImg, username)
+    userContainer.append(divImg, username);
   }
 }
 
-Render.renderHeader(userData)
+Render.renderHeader(userData);
 
-Posts.logout()
+Posts.logout();
 
 Posts.listPosts(arrayPosts.data);

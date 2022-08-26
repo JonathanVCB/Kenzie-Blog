@@ -36,7 +36,7 @@ export class Requests {
   }
 
   static async createPoster(body) {
-    const post = await fetch(`${this.baseUrl}//posts`, {
+    const create = await fetch(`${this.baseUrl}//posts`, {
       method: "POST",
       headers: this.headers,
       body: JSON.stringify(body),
@@ -44,10 +44,21 @@ export class Requests {
       .then((res) => res.json())
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
-    return post;
+    return create;
   }
 
-  
+  static async editPoster(id, body) {
+    const edit = await fetch(`${this.baseUrl}/posts/${id}`, {
+      method: "PATCH",
+      headers: this.headers,
+      body: JSON.stringify(body),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+    return edit;
+  }
+
   static async getPosts() {
     const posts = await fetch(`${this.baseUrl}/posts?page=1`, {
       method: "GET",
@@ -59,13 +70,13 @@ export class Requests {
     return posts;
   }
 
-  static async getUserData(id){
-    const user = await fetch(`${this.baseUrl}/users/${id}`,{
-      headers: this.headers
+  static async getUserData(id) {
+    const user = await fetch(`${this.baseUrl}/users/${id}`, {
+      headers: this.headers,
     })
-    .then((res) => res.json())
-    .catch((err) => console.log(err))
+      .then((res) => res.json())
+      .catch((err) => console.log(err));
 
-    return user
+    return user;
   }
 }
