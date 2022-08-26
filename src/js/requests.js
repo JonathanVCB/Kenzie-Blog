@@ -16,7 +16,7 @@ export class Requests {
       .then((res) => {
         localStorage.setItem("@KenzieBlog:token", res.token);
         localStorage.setItem("@KenzieBlog:user_id", res.userId);
-        // window.location.assign("src/pages/homepage.html");
+        window.location.assign("src/pages/homepage.html");
         return res;
       })
       .catch((err) => console.log(err));
@@ -35,14 +35,27 @@ export class Requests {
     return registerUser;
   }
 
-  static async getPosts(){
-    const posts = await fetch(`${this.baseUrl}/posts?page=16`,{
-      method: "GET",
-      headers: this.headers
+  static async createPoster(body) {
+    const post = await fetch(`${this.baseUrl}//posts`, {
+      method: "POST",
+      headers: this.headers,
+      body: JSON.stringify(body),
     })
-    .then((res) => res.json())
-    .catch((err) => console.log(err))
+      .then((res) => res.json())
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+    return post;
+  }
 
-    return posts
+  
+  static async getPosts() {
+    const posts = await fetch(`${this.baseUrl}/posts?page=16`, {
+      method: "GET",
+      headers: this.headers,
+    })
+      .then((res) => res.json())
+      .catch((err) => console.log(err));
+
+    return posts;
   }
 }
