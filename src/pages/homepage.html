@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../styles/reset.css" />
     <link rel="stylesheet" href="../styles/homepage.css" />
     <script defer type="module" src="../js/homepage.js"></script>
+    <script type="module" defer src="../js/createPoster.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -27,7 +28,9 @@
           </div>
           <p>Gatinho Fofo</p>
         </div>
-        <button id="logoutBtn" class="header__container__logoutBtn">logout</button>
+        <button id="logoutBtn" class="header__container__logoutBtn">
+          logout
+        </button>
       </div>
     </header>
 
@@ -40,8 +43,16 @@
             placeholder="No que você está pensando?"
           ></textarea>
 
-          <button id="sendMobileBtn" class="writePost__mobileBtn" >+</button>
-          <button id="sendDesltopBtn"class="writePost__desktopBtn">Postar</button>
+          <button type="submit" id="sendMobileBtn" class="writePost__mobileBtn">
+            +
+          </button>
+          <button
+            type="submit"
+            id="sendDesltopBtn"
+            class="writePost__desktopBtn"
+          >
+            Postar
+          </button>
         </form>
 
         <ul class="posts__list">
@@ -54,8 +65,12 @@
                 />
               </div>
               <div class="posts__list__post__buttonsDesktop hidden">
-                <button id="editDesktopBtn" class="hidden"><img src="../assets/edit 1.png" alt="" /></button>
-                <button id="editDesktopBtn" class="hidden"><img src="../assets/trash-bin 1.png" alt="" /></button>
+                <button id="editDesktopBtn" class="hidden">
+                  <img src="../assets/edit 1.png" alt="" />
+                </button>
+                <button id="editDesktopBtn" class="hidden">
+                  <img src="../assets/trash-bin 1.png" alt="" />
+                </button>
               </div>
             </div>
             <div class="posts__list__post__textDiv">
@@ -69,9 +84,13 @@
             </div>
 
             <span class="posts__list__post__data">22/08/2022</span>
-            <div class="posts__list__post__buttonsMobile ">
-              <button id="editMobileBtn" class="hidden"><img src="../assets/edit 1.png" alt="" /></button>
-              <button id="editMobileBtn" class="hidden"><img src="../assets/trash-bin 1.png" alt="" /></button>
+            <div class="posts__list__post__buttonsMobile">
+              <button id="editMobileBtn" class="hidden">
+                <img src="../assets/edit 1.png" alt="" />
+              </button>
+              <button id="editMobileBtn" class="hidden">
+                <img src="../assets/trash-bin 1.png" alt="" />
+              </button>
             </div>
           </li>
         </ul>
@@ -79,22 +98,22 @@
 
       <section class="modalEdit hidden">
         <form class="hidden">
-            <h2>Editar</h2>
-            <textarea name="edit" id="edit" placeholder="Estou mudando meu comentário"></textarea>
-            <button id="sendEdit">Enviar</button>
+          <h2>Editar</h2>
+          <textarea
+            name="edit"
+            id="edit"
+            placeholder="Estou mudando meu comentário"
+          ></textarea>
+          <button id="sendEdit">Enviar</button>
         </form>
       </section>
 
       <section class="modalDelete hidden">
         <div>
-            <h2>Deseja deletar esse poster?</h2>
-            <button id="sendEdit">Deletar</button>
+          <h2>Deseja deletar esse poster?</h2>
+          <button id="sendEdit">Deletar</button>
         </div>
       </section>
-
-      
-
     </main>
-
   </body>
 </html>

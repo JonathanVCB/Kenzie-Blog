@@ -16,7 +16,7 @@ export class Requests {
       .then((res) => {
         localStorage.setItem("@KenzieBlog:token", res.token);
         localStorage.setItem("@KenzieBlog:user_id", res.userId);
-        // window.location.assign("src/pages/homepage.html");
+        window.location.assign("src/pages/homepage.html");
         return res;
       })
       .catch((err) => console.log(err));
@@ -33,5 +33,17 @@ export class Requests {
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
     return registerUser;
+  }
+
+  static async createPoster(body) {
+    const post = await fetch(`${this.baseUrl}//posts`, {
+      method: "POST",
+      headers: this.headers,
+      body: JSON.stringify(body),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+    return post;
   }
 }
