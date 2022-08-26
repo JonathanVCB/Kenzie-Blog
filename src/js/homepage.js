@@ -1,6 +1,10 @@
 import { Requests } from "./requests.js";
 
+let userId = localStorage.getItem("@KenzieBlog:user_id")
+
 let arrayPosts = await Requests.getPosts();
+
+let userData = await Requests.getUserData(userId);
 
 class Posts {
   static listPosts(posts) {
@@ -115,7 +119,24 @@ class Render {
 
     return liPostsList;
   }
+
+  static renderHeader(user){
+    const userContainer = document.querySelector(".header__container__user")
+    const divImg = document.createElement("div")
+    const userImg = document.createElement("img")
+    const username = document.createElement("p")
+
+    userImg.src = user.avatarUrl
+
+    username.innerText = user.username
+
+    divImg.append(userImg)
+
+    userContainer.append(divImg, username)
+  }
 }
+
+Render.renderHeader(userData)
 
 Posts.logout()
 
