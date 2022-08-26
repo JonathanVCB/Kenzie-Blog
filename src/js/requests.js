@@ -34,4 +34,15 @@ export class Requests {
       .catch((err) => console.log(err));
     return registerUser;
   }
+
+  static async getPosts(){
+    const posts = await fetch(`${this.baseUrl}/posts?page=16`,{
+      method: "GET",
+      headers: this.headers
+    })
+    .then((res) => res.json())
+    .catch((err) => console.log(err))
+
+    return posts
+  }
 }

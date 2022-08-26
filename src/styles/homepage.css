@@ -45,6 +45,7 @@ header {
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.25rem;
+  cursor: pointer;
 }
 
 .header__container__user div {
@@ -182,10 +183,13 @@ textarea:focus {
 
 .writePost__desktopBtn{
     display: none;
+    cursor: pointer;
 }
 
 .posts__list__post__buttonsDesktop{
-    display: none;
+  visibility: hidden;
+  display: flex;
+  justify-content: space-between;
 }
 
 .modalEdit{
@@ -297,6 +301,9 @@ textarea:focus {
 
 
 @media (min-width: 800px) {
+  .hidden{
+    display: none;
+  }
     .modalDelete div{
         width: 30%;
     }
@@ -349,14 +356,17 @@ textarea:focus {
     gap: 1rem;
     justify-content: flex-start;
   }
+  
   .posts__list__post__buttonsDesktop {
-    display: flex;
-    justify-content: space-between;
+    visibility: inherit;
+    
   }
+  
   .posts__list__post__buttonsDesktop button {
     width: 100%;
     background-color: transparent;
     border: 0 none;
+    cursor: pointer;
   }
 
   .posts__list__post__textDiv {
