@@ -5,8 +5,8 @@ import { PosterEdit } from "./editPoster.js";
 const token = localStorage.getItem("@KenzieBlog:token") || "";
 let userId = localStorage.getItem("@KenzieBlog:user_id");
 
-if (token) {
-  window.location.assign("src/pages/index.html");
+if (!token) {
+  window.location.assign("../../index.html");
 }
 
 let arrayPosts = await Requests.getPosts();

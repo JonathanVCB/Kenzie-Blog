@@ -3,7 +3,6 @@ import { Requests } from "./requests.js";
 class Login {
   static renderLogin() {
     const token = localStorage.getItem("@KenzieBlog:token") || "";
-    console.log(token);
 
     if (token) {
       window.location.assign("src/pages/homepage.html");
