@@ -36,7 +36,7 @@ export class Requests {
   }
 
   static async createPoster(body) {
-    const post = await fetch(`${this.baseUrl}//posts`, {
+    const create = await fetch(`${this.baseUrl}//posts`, {
       method: "POST",
       headers: this.headers,
       body: JSON.stringify(body),
@@ -44,6 +44,18 @@ export class Requests {
       .then((res) => res.json())
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
-    return post;
+    return create;
+  }
+
+  static async editPoster(id, body) {
+    const edit = await fetch(`${this.baseUrl}/posts/${id}`, {
+      method: "PATCH",
+      headers: this.headers,
+      body: body,
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+    return edit;
   }
 }
