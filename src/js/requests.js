@@ -51,7 +51,7 @@ export class Requests {
     const edit = await fetch(`${this.baseUrl}/posts/${id}`, {
       method: "PATCH",
       headers: this.headers,
-      body: body,
+      body: JSON.stringify(body),
     })
       .then((res) => res.json())
       .then((res) => console.log(res))
@@ -59,7 +59,6 @@ export class Requests {
     return edit;
   }
 
-  
   static async getPosts() {
     const posts = await fetch(`${this.baseUrl}/posts?page=1`, {
       method: "GET",
@@ -71,13 +70,13 @@ export class Requests {
     return posts;
   }
 
-  static async getUserData(id){
-    const user = await fetch(`${this.baseUrl}/users/${id}`,{
-      headers: this.headers
+  static async getUserData(id) {
+    const user = await fetch(`${this.baseUrl}/users/${id}`, {
+      headers: this.headers,
     })
-    .then((res) => res.json())
-    .catch((err) => console.log(err))
+      .then((res) => res.json())
+      .catch((err) => console.log(err));
 
-    return user
+    return user;
   }
 }
