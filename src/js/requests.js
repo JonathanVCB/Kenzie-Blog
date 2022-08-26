@@ -58,4 +58,26 @@ export class Requests {
       .catch((err) => console.log(err));
     return edit;
   }
+
+  
+  static async getPosts() {
+    const posts = await fetch(`${this.baseUrl}/posts?page=1`, {
+      method: "GET",
+      headers: this.headers,
+    })
+      .then((res) => res.json())
+      .catch((err) => console.log(err));
+
+    return posts;
+  }
+
+  static async getUserData(id){
+    const user = await fetch(`${this.baseUrl}/users/${id}`,{
+      headers: this.headers
+    })
+    .then((res) => res.json())
+    .catch((err) => console.log(err))
+
+    return user
+  }
 }

@@ -7,7 +7,7 @@ class PosterCreate {
     const btnDesktop = document.getElementById("sendDesltopBtn");
 
     btnMobile.addEventListener("click", (event) => {
-      event.preventDefault();
+
       const data = {
         content: text.value,
       };
@@ -15,7 +15,7 @@ class PosterCreate {
     });
 
     btnDesktop.addEventListener("click", (event) => {
-      event.preventDefault();
+      
 
       const data = {
         content: text.value,
