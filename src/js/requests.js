@@ -36,7 +36,7 @@ export class Requests {
   }
 
   static async createPoster(body) {
-    const post = await fetch(`${this.baseUrl}//posts`, {
+    const post = await fetch(`${this.baseUrl}/posts`,{
       method: "POST",
       headers: this.headers,
       body: JSON.stringify(body),
@@ -58,6 +58,7 @@ export class Requests {
 
     return posts;
   }
+  
 
   static async getUserData(id){
     const user = await fetch(`${this.baseUrl}/users/${id}`,{
@@ -67,5 +68,16 @@ export class Requests {
     .catch((err) => console.log(err))
 
     return user
+  }
+
+  static async deletePost(idPost){
+    const postDelete = await fetch(`${this.baseUrl}/posts/${idPost}`,{
+      method: "DELETE",
+      headers: this.headers
+    })
+    .then(console.log("Deletado com sucesso"))
+    .catch((err) => console.log(err))
+
+    return postDelete
   }
 }

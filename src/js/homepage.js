@@ -1,8 +1,17 @@
+import { Delete } from "./deletePoster.js";
 import { Requests } from "./requests.js";
 
-let userId = localStorage.getItem("@KenzieBlog:user_id")
+const token = localStorage.getItem("@KenzieBlog:token") || "";
+    console.log(token);
 
-let arrayPosts = await Requests.getPosts();
+    if (token) {
+      window.location.assign("src/pages/index.html");
+    }
+
+    let userId = localStorage.getItem("@KenzieBlog:user_id")
+
+
+    let arrayPosts = await Requests.getPosts();
 
 let userData = await Requests.getUserData(userId);
 
@@ -89,6 +98,9 @@ class Render {
 
     deleteMobileBtn.append(imgDeleteBtn);
 
+    deleteDesktopBtn.addEventListener("click", ()=>{Delete.showDeleteModal(deleteDesktopBtn.closest("li").id)})
+    deleteMobileBtn.addEventListener("click", ()=>{Delete.showDeleteModal(deleteDesktopBtn.closest("li").id)})
+
     divButtonsMobile.append(editMobileBtn, deleteMobileBtn);
 
     divPostTextDiv.append(postUsername, postText);
@@ -113,7 +125,6 @@ class Render {
 
     if (userIdLocalStorage == liPostsList.value) {
       divButtonsDesktop.classList.remove("hidden");
-
       divButtonsMobile.classList.remove("hidden");
     }
 
