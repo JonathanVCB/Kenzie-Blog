@@ -87,6 +87,7 @@ header {
   box-shadow: 0 0 0 0;
   border: 0 none;
   outline: 0;
+  resize: none;
 }
 
 textarea:focus {
@@ -202,7 +203,7 @@ textarea:focus {
 }
 
 .modalEdit {
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100%;
   z-index: 2;
@@ -213,6 +214,7 @@ textarea:focus {
   left: 0;
   bottom: 0;
   right: 0;
+  background-color: #000000de;
 }
 
 .modalEdit form {
@@ -266,7 +268,7 @@ textarea:focus {
 }
 
 .modalDelete {
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100%;
   z-index: 2;
@@ -277,6 +279,7 @@ textarea:focus {
   left: 0;
   bottom: 0;
   right: 0;
+  background-color: #000000de;
 }
 
 .modalDelete div {
@@ -318,7 +321,7 @@ textarea:focus {
 }
 #closeModal {
   width: 10%;
-  margin-left: 19rem;
+  margin-left: 95%;
   background-color: var(--red);
   color: var(--white);
   font-weight: 700;
@@ -328,7 +331,7 @@ textarea:focus {
 }
 #closeModal2 {
   width: 10%;
-  margin-left: 19rem;
+  margin-left: 95%;
   background-color: var(--red);
   color: var(--white);
   font-weight: 700;

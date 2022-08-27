@@ -13,9 +13,9 @@ export class Delete {
     const modalDelete = document.querySelector(".modalDelete");
     const deleteBtn = document.getElementById("sendDelete");
 
-    deleteBtn.addEventListener("click", () => {
-      Requests.deletePost(id);
-      modalDelete.classList.add("hidden");
+    deleteBtn.addEventListener("click", async () => {
+      await Requests.deletePost(id);
+      location.reload();
     });
   }
 
