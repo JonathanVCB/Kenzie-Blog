@@ -10,20 +10,21 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/styles/reset.css" />
-    <link rel="stylesheet" href="./src/styles/index.css" />
-    <script type="module" defer src="./src/js/index.js"></script>
-
-    <title>m2-entrega-blog-m2-login</title>
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/register.css" />
+    <script type="module" defer src="../js/register.js"></script>
+    <title>m2-entrega-blog-m2-register</title>
   </head>
   <body>
     <main class="main_container">
       <form class="main_form">
-        <h1>Entrar</h1>
+        <h1>Cadastro</h1>
+        <input id="inputName" type="name" placeholder="Nome do usuário" />
         <input id="inputEmail" type="email" placeholder="Email" />
+        <input id="inputPhotograph" type="text" placeholder="Foto de Perfil" />
         <input id="inputPassword" type="password" placeholder="Senha" />
-        <button id="btnLogin" type="submit">Entrar</button>
-        <p>Não possui cadastro? <span id="register">Clique aqui!</span></p>
+        <button id="btnRegister" type="submit">Cadastrar</button>
+        <p>Ja possui conta? <span id="login">clique aqui!</span></p>
       </form>
     </main>
   </body>
