@@ -14,9 +14,11 @@ export class Requests {
     })
       .then((res) => res.json())
       .then((res) => {
-        localStorage.setItem("@KenzieBlog:token", res.token);
-        localStorage.setItem("@KenzieBlog:user_id", res.userId);
-        window.location.assign("src/pages/homepage.html");
+        if (res.token) {
+          localStorage.setItem("@KenzieBlog:token", res.token);
+          localStorage.setItem("@KenzieBlog:user_id", res.userId);
+          window.location.assign("src/pages/homepage.html");
+        }
         return res;
       })
       .catch((err) => console.log(err));
@@ -69,7 +71,6 @@ export class Requests {
 
     return posts;
   }
-  
 
   static async getUserData(id) {
     const user = await fetch(`${this.baseUrl}/users/${id}`, {
@@ -81,14 +82,14 @@ export class Requests {
     return user;
   }
 
-  static async deletePost(idPost){
-    const postDelete = await fetch(`${this.baseUrl}/posts/${idPost}`,{
+  static async deletePost(idPost) {
+    const postDelete = await fetch(`${this.baseUrl}/posts/${idPost}`, {
       method: "DELETE",
-      headers: this.headers
+      headers: this.headers,
     })
-    .then(console.log("Deletado com sucesso"))
-    .catch((err) => console.log(err))
+      .then(console.log("Deletado com sucesso"))
+      .catch((err) => console.log(err));
 
-    return postDelete
+    return postDelete;
   }
 }
