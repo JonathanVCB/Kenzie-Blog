@@ -32,7 +32,11 @@ export class Requests {
       body: JSON.stringify(body),
     })
       .then((res) => res.json())
-      .then((res) => console.log(res))
+      .then((res) => {
+        if (res.id) {
+          window.location.assign("../../index.html");
+        }
+      })
       .catch((err) => console.log(err));
     return registerUser;
   }
