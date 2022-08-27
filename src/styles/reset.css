@@ -132,10 +132,11 @@ table {
 
 :root {
   --darkBlue: #454d6b;
-  --blue: #6495edbf; 
+  --blue: #6495edbf;
   --white: #ffffff;
   --black: #000000;
   --darkBlue2: #5c5d8d;
-  --red: #FF3F5B;
-  --lightBlue: #6495ED;
+  --red: #ff3f5b;
+  --lightBlue: #6495ed;
+  --green: green;
 }

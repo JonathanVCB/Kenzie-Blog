@@ -14,10 +14,9 @@
     <link rel="stylesheet" href="../styles/homepage.css" />
     <script defer type="module" src="../js/homepage.js"></script>
     <script defer type="module" src="../js/createPoster.js"></script>
-    <script defer type= "module" src="../js/deletePoster.js"></script>
-    <script defer type="module"src="../js/editPoster.js"></script>
+    <script defer type="module" src="../js/deletePoster.js"></script>
+    <script defer type="module" src="../js/editPoster.js"></script>
     <title>homepage</title>
-
   </head>
   <body>
     <header>
@@ -109,6 +108,7 @@
 
       <section class="modalEdit hidden">
         <form>
+          <button id="closeModal">x</button>
           <h2>Editar</h2>
           <textarea
             name="edit"
@@ -121,6 +121,7 @@
 
       <section class="modalDelete hidden">
         <div>
+          <button id="closeModal2">X</button>
           <h2>Deseja deletar esse poster?</h2>
           <button id="sendDelete">Deletar</button>
         </div>

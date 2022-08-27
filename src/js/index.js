@@ -6,7 +6,6 @@ class Login {
 
     if (token) {
       window.location.assign("src/pages/homepage.html");
-      console.log(token);
     }
 
     const inputEmail = document.getElementById("inputEmail");

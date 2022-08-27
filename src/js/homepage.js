@@ -99,6 +99,8 @@ class Render {
 
     editMobileBtn.addEventListener("click", () => {
       PosterEdit.openModalEdit();
+      const idUser2 = liPostsList.id;
+      PosterEdit.openModalEdit(idUser2);
     });
 
     editMobileBtn.append(imgEditBtn);

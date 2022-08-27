@@ -17,7 +17,6 @@ class Register {
         avatarUrl: inputPhotograph.value,
         password: inputPassword.value,
       };
-      console.log(data);
       await Requests.register(data);
     });
   }
